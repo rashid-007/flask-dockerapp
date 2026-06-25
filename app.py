@@ -5,7 +5,7 @@ start_time=time.time()
 @app.route('/')
 def home():
     return jsonify({
-        'message': 'Hello from dockerized flask app!',
+        'message': 'Hello from dockerized flask app! Webhook has successfully been added',
 	'status': 'running'
     })
 @app.route('/health')
