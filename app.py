@@ -8,6 +8,12 @@ def home():
         'message': 'Hello from dockerized flask app! Webhook has successfully been added',
 	'status': 'running'
     })
+@app.route('/stress')
+def stress():
+    x=0
+    for i in range(1000000):
+	x+=i*i
+    return jsonify({ 'status': 'ok', 'result': x})
 @app.route('/health')
 def health():
     uptime = time.time() - start_time
