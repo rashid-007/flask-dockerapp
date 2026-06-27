@@ -10,10 +10,10 @@ def home():
     })
 @app.route('/stress')
 def stress():
-    x=0
+    x = 0
     for i in range(1000000):
-	x+=i*i
-    return jsonify({ 'status': 'ok', 'result': x})
+       	x += i*i
+    return jsonify({'status': 'ok', 'result': x})
 @app.route('/health')
 def health():
     uptime = time.time() - start_time
