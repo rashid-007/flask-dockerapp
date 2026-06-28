@@ -36,7 +36,7 @@ python3 app.py
 docker pull rashid-007/flask-dockerapp:latest
 
 # Run the container
-docker run -d -p 5000:5000 flask-dockerapp
+docker run -d -p 4000:4000 flask-dockerapp
 ```
 
 ## DockerHub
