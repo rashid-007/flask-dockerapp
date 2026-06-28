@@ -53,7 +53,7 @@ pipeline {
             steps {
                 sh 'docker stop flask-app || true'
                 sh 'docker rm flask-app || true'
-                sh 'docker run -d -p 5000:5000 --name flask-app ${IMAGE_NAME}:${BUILD_NUMBER}'
+                sh 'docker run -d -p 4000:4000 --name flask-app ${IMAGE_NAME}:${BUILD_NUMBER}'
             }
         }
     }
