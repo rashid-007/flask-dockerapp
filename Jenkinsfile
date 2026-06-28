@@ -18,7 +18,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     sh '''
-			sonar-scanner \
+			/opt/sonar-scanner/bin/sonar-scanner \
 			-Dsonar.projectKey=${SONAR_PROJECT_KEY} \
 			-Dsonar.sources=. \
 			-Dsonar.host.url=http://sonarqube:9000
