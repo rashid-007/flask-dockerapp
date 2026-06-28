@@ -14,6 +14,26 @@ pipeline {
                     branch: 'main'
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh '''
+			sonar-scanner \
+			-Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+			-Dsonar.sources=. \
+			-Dsonar.host.url=http://sonarqube:9000
+                 
+                       '''
+                }
+            }
+        }
+	stage('Quality Gate') {
+	    steps {
+		timeout(time: 2, unit: 'MINUTES') {
+		    waitForQualityGate abortPipeline: true
+		}
+            }
+	}
 
         stage('Build Docker Image') {
             steps {
