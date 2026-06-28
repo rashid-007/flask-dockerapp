@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('Dockerhub')
         IMAGE_NAME = 'rashidali007/flask-dockerapp'
+        SONAR_PROJECT_KEY='flask-dockerapp'
     }
 
     stages {
